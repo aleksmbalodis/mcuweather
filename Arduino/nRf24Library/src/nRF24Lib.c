@@ -5,6 +5,7 @@ uint8_t CS = NULL;
 
 uint8_t RXbuffer[31];
 
+
 void nRF24_RegisterWrite(uint8_t reg, uint8_t regbit, uint8_t val){
     if(CS && CSN != NULL ){
          digitalWrite(CSN, HIGH);
@@ -29,7 +30,14 @@ void nRF24_Init(){
 }
 
 void nRF24_WriteTXData(uint8_t* pTXdata, uint8_t asize){
-
+    if(CS && CSN != NULL ){
+         digitalWrite(CSN, HIGH);
+    }
+    SPI.Transfer(W_TX_PAYLOAD);
+    for(int i = 0; i <= asize; i++){
+        SPI.Transfer(pTXdata[i]);
+    }
+    digitalWrite(CSN, LOW);
 }
 
 void nRF24_ENTXMode(){
