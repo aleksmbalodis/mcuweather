@@ -164,4 +164,8 @@
 #define ACTIVATE		0x50
 #define NOP           0xFF
 
-
+void nRF24_RegisterWrite(uint8_t reg, uint8_t regbit, uint8_t val);
+void nRF24_Init();
+void nRF24_WriteTXData(uint8_t* pTXdata, uint8_t asize);
+void nRF24_ENTXMode();
+uint8_t * nRF24_ReadRXBuffer();
