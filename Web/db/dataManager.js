@@ -34,23 +34,14 @@ export const add = async ({date, temperature, humidity, brightness}) => {
     
 }
 
-export const list = async (body) =>
+export const list = async (date) =>
 {
-    let data;
-    let {date} = body;
     if(date)
     {
-        data = await model.find({date:{$gte: date.from, $lte: date.to}})
+        return await model.find({date:{$gte: date.from, $lte: date.to}})
     } else {
-        data = await model.find()
+        return await model.find()
     }
-    if(data)
-    {
-        return {status: 200, data}
-    } else {
-        return {status: 404}
-    }
-    
 }
 
 export const remove = async (_id) => {

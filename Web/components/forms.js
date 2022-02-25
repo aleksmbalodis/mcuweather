@@ -8,8 +8,8 @@ export default function Form({ children }) {
 
         const res = await fetch('/api/data/upload', {
             body: JSON.stringify({
-            Token: "",
-            data:{
+            acess: `:Pt/c'd>.6.wh-V5`,
+            data: {
                 date: event.target.date.value,
                 temperature: event.target.temperature.value,
                 humidity: event.target.humidity.value,
@@ -24,6 +24,7 @@ export default function Form({ children }) {
           })
       
           const result = await res.json()
+          console.log(result)
     }
 
     return (
