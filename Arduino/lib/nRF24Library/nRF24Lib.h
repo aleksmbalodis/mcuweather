@@ -1,3 +1,5 @@
+#pragma once
+
 //Standarta bibliotekas 
 #include <stdio.h>
 #include <stdlib.h>
@@ -164,8 +166,23 @@
 #define ACTIVATE		0x50
 #define NOP           0xFF
 
-void nRF24_RegisterWrite(uint8_t reg, uint8_t regbit, uint8_t val);
-void nRF24_Init();
-void nRF24_WriteTXData(uint8_t* pTXdata, uint8_t asize);
-void nRF24_ENTXMode();
-uint8_t * nRF24_ReadRXBuffer();
+class nRF24Lib{
+
+    public:
+        
+        uint8_t CSNpin;
+        uint8_t CSpin;
+        uint8_t RXbuffer[31];
+
+        nRF24Lib(uint8_t CSN, uint8_t CS){
+            CSNpin = CSN;
+            CSpin = CS;
+        };
+
+        void nRF24_RegisterWrite(uint8_t reg, uint8_t regbit, uint8_t val);
+        void nRF24_Init();
+        void nRF24_WriteTXData(uint8_t* pTXdata, uint8_t asize);
+        void nRF24_ENTXMode();
+        void FlushTX();
+        uint8_t nRF24_ReadRXBuffer();
+};
