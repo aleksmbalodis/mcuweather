@@ -69,6 +69,6 @@ class nRF24Lib{
     void TX_Mode(uint8_t *address, uint8_t ch);
     uint8_t Transmit(uint8_t *dati);
     void RX_Mode(uint8_t *address, uint8_t ch);
-    uint8_t IsDataAvailable(uint8_t pipenr);
+    uint8_t IsDataAvailable(int pipenr);
     void Receive(uint8_t *data);
 };
