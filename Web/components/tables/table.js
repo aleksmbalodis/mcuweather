@@ -4,6 +4,15 @@ export default function Table({ children , styles, content}) {
     return (
         <table className={styles.table}>
             {children}
+            {content.map(({date, temperature, humidity, brightness}) => (
+                <tr>
+                    <td>{new Date(date).toUTCString("dd/mm/yy")}</td>
+                    {/* <td>{new Date(date).toTimeString()}</td> */}
+                    <td>{temperature}</td>
+                    <td>{humidity}</td>
+                    <td>{brightness}</td>
+                </tr>
+            ))}
         </table>
 
     )

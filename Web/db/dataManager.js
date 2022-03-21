@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import connection from './connection';
+import conn from './connection';
 const { Schema } = mongoose;
 
 export const dataSchema = new Schema({
@@ -11,7 +11,7 @@ export const dataSchema = new Schema({
 })
 
 
-const model = connection.model("data", dataSchema, "data")
+const model = conn().model("data", dataSchema, "data")
 
 
 export const add = async ({date, temperature, humidity, brightness}) => {
@@ -34,14 +34,25 @@ export const add = async ({date, temperature, humidity, brightness}) => {
     
 }
 
-export const list = async (date) =>
+export const list = async (filter) =>
 {
-    if(date)
-    {
-        return await model.find({date:{$gte: date.from, $lte: date.to}})
-    } else {
-        return await model.find()
+    var data
+
+    if (filter) {
+        data = await model.find({ date: {
+            $gte: filter.from,
+            $lt: filter.to
+        }})
+    } 
+    else {
+        data = await model.find({})
     }
+
+    
+    // console.log(model.find({}))
+    // console.log(data)
+    return JSON.stringify(data)
+    
 }
 
 export const remove = async (_id) => {

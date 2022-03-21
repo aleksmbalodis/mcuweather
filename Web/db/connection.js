@@ -1,8 +1,14 @@
-import mongoose from 'mongoose'
+var mongoose = require('mongoose')
 
 const connect = 'mongodb+srv://Maid-Bot:6jnkR6ugqJcxci5f@cluster0.njiyf.mongodb.net/mcuweather'
 
-export default mongoose.createConnection(connect,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+
+
+var conn = () => {
+    // console.log(mongoose)
+    return mongoose.createConnection(connect, {
+        useNewUrlParser: true
+    });  
+} 
+
+export default conn
