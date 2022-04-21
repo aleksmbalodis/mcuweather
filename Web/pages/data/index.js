@@ -5,6 +5,7 @@ import Table from "../../components/tables/table";
 import styles from "../../styles/Data.module.css"
 import Filter from '../../components/filter';
 import { getData } from '../../components/api/data';
+import Loading from '../../components/loading';
 // import fetchData, { getFilteredData } from '../../lib/data';
 // let filter = {from:0, to:0};
 
@@ -25,28 +26,28 @@ export default function Data() {
 
     useEffect(() => {
         setLoading(true)
-        setData(getData())
-        // fetch('api/data')
-        //     .then((res) => res.json())
-        //     .then((result) => {
-        //         setLoading(false);
-        //         // console.log(result)
-        //         setData(result)
-        //     })
+        // setData(getData())
+        fetch('api/data')
+            .then((res) => res.json())
+            .then((result) => {
+                setLoading(false);
+                // console.log(result)
+                setData(result)
+            })
     },[])
 
     const filter = (e) => { ///TODO: add present filter
         e.preventDefault()
         if (from && to) { //filters when filter button is pressed and when date is present
             setLoading(true)
-            setData(getData(from,to))
-            // fetch(`api/data/${from}/${to}`)
-            // .then((res) => res.json())
-            // .then((result) => {
-            //     // console.log(result)
-            //     setLoading(false)
-            //     setData(result)
-            // } )
+            // setData(getData(from,to))
+            fetch(`api/data/${from}/${to}`)
+            .then((res) => res.json())
+            .then((result) => {
+                // console.log(result)
+                setLoading(false)
+                setData(result)
+            } )
         }
         else { // filters when fulterbutton is pressed but dates are cleared
             setLoading(true)
@@ -79,9 +80,10 @@ export default function Data() {
     // }
 
     return (
-        <div className="">
-            <Form></Form>
-            <Filter setFrom={setFrom} setTo={setTo} filter={filter}></Filter>
+        <div className={styles.page}>
+            {/* <Form></Form> */}
+            <h1>Data</h1>
+            <Filter setFrom={setFrom} setTo={setTo} filter={filter} styles={styles}></Filter>
             {/* <form onSubmit={filter}>
                 <label htmlFor="date-from">from:</label>
                 <input name="date-from" type="datetime-local" onChange={(e) => {
@@ -101,9 +103,9 @@ export default function Data() {
                 // data ? <Table content={data} styles={styles}> </Table> : <h1>LOADING...</h1>
             }
 
-            { loading ? <div>Loading...</div> :
+            { loading ? <Loading/> :
                 <Table content={data} styles={styles}>
-                    <tr>
+                    <tr className={styles.title}>
                         <th>Date</th>
                         <th>Temperature</th>
                         <th>Humidity</th>

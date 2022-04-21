@@ -1,0 +1,11 @@
+.page {
+    margin: 1rem;
+    border-radius: 10px;
+    border: 1px;
+    background-color: #4D5382;
+    color: aliceblue
+}
+.page h1 {
+    margin: 1rem;
+    text-align: center;
+}

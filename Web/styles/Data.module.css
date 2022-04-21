@@ -1,4 +1,64 @@
-.table {
-
+.page {
+    margin: 1rem;
+    border-radius: 10px;
+    border: 1px;
+    background-color: #4D5382;
+    min-height: 600px;
+    color: aliceblue
 }
+
+.page h1 {
+    margin: 1rem;
+    text-align: center;
+}
+
+
+.title {
+    background-color: #4D5382;
+    color: beige;
+    padding: 10px
+}
+
+.table {
+    width:100%;
+    border-collapse: collapse;
+    padding:5px;
+    color:black
+}
+
+.table td, .title th {
+    padding: 15px
+}
+
+.table td:hover {
+    background-color: #CACF85;
+}
+
+.tableRow {
+    background-color: #8CBA80;
+    padding: 10px
+}
+.filter {
+    padding:10px;
+    background-color: #514663;
+    color: white
+}
+.filter input {
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.filter label {
+    padding:5px;
+}
+.filter button {
+    background-color: aqua;
+    text-decoration: none;
+    border:none;
+    padding: 10px;
+    margin-left: 10px;
+    min-width: 75px
+}
+
+
 

@@ -1,0 +1,51 @@
+
+@keyframes loading {
+    0% {transform: rotate(0deg); background-color: rgba(255, 0, 0, 0.562);}
+    25% {transform: rotate(90deg); background-color: rgba(255, 251, 0, 0.562);}
+    50% {transform: rotate(180deg); background-color: rgba(47, 255, 5, 0.63);}
+    75% {transform: rotate(270deg); background-color: rgba(0, 26, 255, 0.568);}
+    100% {transform: rotate(360deg); background-color: rgb(255, 0, 0);}
+}
+
+.loading h1 {
+    color:aliceblue;
+}
+
+
+.loading {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.animation {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    animation-name: loading;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.arrow {
+    background-color: black;
+    width: 100px;
+    height: 50px;
+    
+}
+.center {
+    margin:auto ;
+    margin-bottom: 10px;
+    background-color: black;
+    height: 100px;
+    width:100px;
+    padding:10px;
+    animation-name: loading;
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+
+
