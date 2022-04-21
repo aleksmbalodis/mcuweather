@@ -1,0 +1,42 @@
+.page {
+    border: 1px;
+    width: 100;
+    min-height:30;
+}
+.page div div {
+    display:none;
+    position: fixed;
+    min-height: 50px;
+    width: 100% ;
+    border: 1px solid black;
+}
+.page div:hover .dropdown { display: block;}
+
+.page div {
+    margin-left: 10%;
+}
+
+.page ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    position: fixed;
+    background-color: #f1f1f1;
+    overflow: auto;
+  }
+  
+.page li a {
+    margin: auto;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    min-height: 100px;
+    margin:auto;
+    text-align: center;
+    text-decoration: none;
+  }
+
+.page li a:hover {
+    
+}
