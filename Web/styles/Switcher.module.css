@@ -3,16 +3,8 @@
     width: 100;
     min-height:30;
 }
-.page div div {
-    display:none;
-    position: fixed;
-    min-height: 50px;
-    width: 100% ;
-    border: 1px solid black;
-}
-.page div:hover .dropdown { display: block;}
 
-.page div {
+.page .content {
     margin-left: 10%;
 }
 
@@ -22,7 +14,7 @@
     padding: 0;
     width: 10%;
     position: fixed;
-    background-color: #f1f1f1;
+    background-color: rgba(255,255,255,0.60);
     overflow: auto;
   }
   
@@ -38,5 +30,16 @@
   }
 
 .page li a:hover {
-    
+    background-color: rgba(255,255,255,0.60);
 }
+
+.page .brightness {
+    background-color: darkcyan;
+}
+.page .humidity {
+    background-color: darkgoldenrod;
+}
+.page .temperature {
+    background-color: firebrick;
+}
+

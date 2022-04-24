@@ -2,9 +2,8 @@
     margin: 1rem;
     border-radius: 10px;
     border: 1px;
-    background-color: #4D5382;
-    min-height: 600px;
-    color: aliceblue
+    background-color: #dad7d4;
+    color: #0f0f0f
 }
 
 .page h1 {
@@ -14,7 +13,7 @@
 
 
 .title {
-    background-color: #4D5382;
+    background-color: #c5c2c0;
     color: beige;
     padding: 10px
 }
@@ -35,13 +34,13 @@
 }
 
 .tableRow {
-    background-color: #8CBA80;
+    background-color: #dad7d4;
     padding: 10px
 }
 .filter {
     padding:10px;
-    background-color: #514663;
-    color: white
+    background-color: #f0f0f0;
+    color: #0d0f0f
 }
 .filter input {
     padding: 5px;
@@ -59,6 +58,5 @@
     margin-left: 10px;
     min-width: 75px
 }
-
 
 

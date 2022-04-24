@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         //returns full list of data
         case "GET": {
             const data = await list()
-            console.log(data)
+            // console.log(data)
             res.status(200).json(data)
             break;
         } 

@@ -81,7 +81,7 @@ export default function Data() {
 
     return (
         <div className={styles.page}>
-            {/* <Form></Form> */}
+            <Form></Form>
             <h1>Data</h1>
             <Filter setFrom={setFrom} setTo={setTo} filter={filter} styles={styles}></Filter>
             {/* <form onSubmit={filter}>
