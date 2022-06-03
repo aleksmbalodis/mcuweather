@@ -22,6 +22,7 @@ void loop(){
   if (rxradio.IsDataAvailable(1) == 1)
 	  {
 		  rxradio.Receive(RxDati);
+      
 		  for(int i = 0; i < sizeof(RxDati); i++)
       {
         Serial.print(RxDati[i]);
