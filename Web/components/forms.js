@@ -6,6 +6,8 @@ export default function Form({ children }) {
     const uploadData = async event => {
         event.preventDefault()
 
+        //Creates server request to save the data
+
         const res = await fetch('/api/data/upload', {
             body: JSON.stringify({
             acess: `:Pt/c'd>.6.wh-V5`,
@@ -22,7 +24,7 @@ export default function Form({ children }) {
             },
             method: 'POST'
           })
-      
+          //
           const result = await res.json()
           console.log(result)
     }

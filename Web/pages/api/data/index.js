@@ -8,10 +8,12 @@ export default async function handler(req, res) {
         case "GET": {
             const data = await list()
             // console.log(data)
+            //returns data
             res.status(200).json(data)
             break;
         } 
         default : {
+            //return error
                 res.status(405)
         }
     }

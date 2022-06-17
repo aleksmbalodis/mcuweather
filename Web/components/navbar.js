@@ -7,6 +7,7 @@ export default function Navbar({ children, home }) {
     return (
         <div className={styles.navbar}>
             <ul>
+                {/* Creates virtual links to other pages */}
                 <li><Link href="/"><a>Weather control</a></Link></li>
                 <li><Link href="/data"><a>Data</a></Link></li>
                 <li><Link href="/graphs"><a>Graphs</a></Link></li>
