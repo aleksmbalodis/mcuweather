@@ -1,6 +1,6 @@
 import { add, list } from "../../../db/dataManager"
 
-const AcessToken = `:Pt/c'd>.6.wh-V5`
+const AcessToken = `IHatePython`
 
 
 //Asks for a form to add data to database
