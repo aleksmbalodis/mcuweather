@@ -50,25 +50,53 @@ class nRF24Lib{
     uint8_t CSNpin;
     uint8_t CSpin;
 
+/*------------------------------------------------- nRF24Lib -----
+|  Konstruktors nRF24Lib
+|
+|  Pielietojums: Izmanto, lai iestatitu CSN un CS pin, kas tiks izmantots biblioteka velak.
+|
+|  Parametri:
+|      uint8_t CSN (IN) -- Saja parametra ievada Arduino Chip Select Not kontakta numuru
+|      uint8_t CS (IN) -- Saja parametra ievada Arduino Chip Select kontakta numuru
+|
+*-------------------------------------------------------------------*/
     nRF24Lib(uint8_t CSN, uint8_t CS){
             CSNpin = CSN;
             CSpin = CS;
+            pinMode(CSN, OUTPUT);
+            pinMode(CS, OUTPUT);
         };
 
+// Seit ir aprakstitas visas bibliotekas funkcijas
+// un funkciju parametri
 
     void CS_Select(void);
+
     void CS_UnSelect(void);
+
     void CE_Enable(void);
+
     void CE_Disable(void);
+
     void WriteRegister(uint8_t reg, uint8_t data);
+
     void WriteRegisterMulti(uint8_t reg, uint8_t * data, int size);
+
     uint8_t ReadRegister(uint8_t reg);
+
     void ReadRegisterMulti(uint8_t reg, uint8_t * data, int size);
+
     void SendCommand(uint8_t cmd);
+
     void Init(void);
+
     void TX_Mode(uint8_t *address, uint8_t ch);
+
     uint8_t Transmit(uint8_t *dati);
+
     void RX_Mode(uint8_t *address, uint8_t ch);
+
     uint8_t IsDataAvailable(int pipenr);
+
     void Receive(uint8_t *data);
 };
