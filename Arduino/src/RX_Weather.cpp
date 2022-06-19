@@ -1,7 +1,7 @@
 #include <nRF24Lib.h>
 
- #define CSN 9
-#define CS 10
+ #define CSN 10
+#define CS 9
 
 nRF24Lib rxradio(CSN, CS);
 
@@ -22,14 +22,20 @@ void loop(){
   if (rxradio.IsDataAvailable(1) == 1)
 	  {
 		  rxradio.Receive(RxDati);
-      
-		  for(int i = 0; i < sizeof(RxDati); i++)
+    }
+    Serial.print("Temperatura (C): ");
+    Serial.print(RxDati[1]);
+    Serial.print(" Gaisa Mitrums (RH%): ");
+    Serial.print(RxDati[2]);
+    Serial.print(" Apgaismojums (lum)): ");
+    Serial.println(RxDati[3]);
+    delay(1000);
+		 /* for(int i = 0; i < sizeof(RxDati); i++)
       {
         Serial.print(RxDati[i]);
         Serial.print(" ");
       }
       Serial.println("");
 	  }
-
-  delay(1000);
+    */
 }
