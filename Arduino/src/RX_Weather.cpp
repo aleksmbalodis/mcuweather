@@ -12,10 +12,10 @@ uint8_t RxDati[32];
 void setup(){
   Serial.begin(9600);
   SPI.begin();
-  Serial.println("SPI BEGIN");
+  //Serial.println("SPI BEGIN");
   rxradio.Init();
   rxradio.RX_Mode(RxAddress, 10);
-  Serial.println("RX BEGIN");
+  //Serial.println("RX BEGIN");
 }
 
 void loop(){
@@ -23,11 +23,11 @@ void loop(){
 	  {
 		  rxradio.Receive(RxDati);
     }
-    Serial.print("Temperatura (C): ");
+    
     Serial.print(RxDati[1]);
-    Serial.print(" Gaisa Mitrums (RH%): ");
+    Serial.print(",");
     Serial.print(RxDati[2]);
-    Serial.print(" Apgaismojums (lum)): ");
+    Serial.print(",");
     Serial.println(RxDati[3]);
     delay(1000);
 		 /* for(int i = 0; i < sizeof(RxDati); i++)
