@@ -1,12 +1,12 @@
 #include <nRF24Lib.h>
 #include <DHT.h>
 
-#define CSN 9
-#define CS 10
+#define CSN 10
+#define CS 9
 #define Delay 500 // Delay
 #define Vin 5 // V 
 #define Res 10000 //Ohm
-#define DHTTYPE DHT11
+#define DHTTYPE DHT22
 #define DHTPIN 2
 
 nRF24Lib txradio(CSN, CS);
@@ -27,6 +27,8 @@ int toLum(int raw){
 }
 
 void setup(){
+  //pinMode(9, OUTPUT);
+  //pinMode(10, OUTPUT);
   Serial.begin(9600);
   dht.begin();
   SPI.begin();
@@ -46,7 +48,7 @@ void loop(){
   TxDati[3] = LuxVal;
 
   if(txradio.Transmit(TxDati) == 1){
-    Serial.println("");
+    Serial.println("OKKKKK");
   }
 
   Serial.print("Temp: ");
@@ -56,6 +58,6 @@ void loop(){
   Serial.print(" Lux: ");
   Serial.println(TxDati[3]);
 
-  delay(300);
+  delay(1000);
 
 }
