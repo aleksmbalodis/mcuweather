@@ -29,7 +29,16 @@ import LineGraph from "../../components/switcher/LineGraph"
 import React, { useState, useEffect } from 'react'
 import Loading from "../../components/loading"
 
-
+const options = {
+    scales: {
+        x: {label:false}
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
 
 export default function Graphs({ home }) {
 
@@ -46,6 +55,7 @@ export default function Graphs({ home }) {
     const [graph, setGraph] = useState({graph: "humidity", color: "rgba(255,255,255,0.60)"})
     const [filtered, setFiltered] = useState([])
     // console.log(data)
+
 
     
 

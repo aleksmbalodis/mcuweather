@@ -40,7 +40,7 @@ export default function LineGraph({data, title}) {
                 },
                 color: "#F2EFEA",
                 scaleLabel: {
-                    display:     true,
+                    display:     false,
                     labelString: 'Date'
                 }
             }],
