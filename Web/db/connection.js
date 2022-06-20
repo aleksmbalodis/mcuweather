@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-const connect = 'mongodb+srv://Maid-Bot:6jnkR6ugqJcxci5f@cluster0.njiyf.mongodb.net/mcuweather'
+const connect = ''
 
 
 
